@@ -1,2 +1,3 @@
-# vue-template
-Starter project for vue
+# Music Browser
+
+Browse some of my favorite bands and albums of the year.
