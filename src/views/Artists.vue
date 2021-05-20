@@ -6,11 +6,12 @@
         <h1>Artists</h1>
       </div>
     </div>
-    <div class="artists__container">
+    <div class="grid__container">
       <Thumb
+        v-if="artists"
         v-for="(artist, index) in artists"
         :key="index"
-        @click.native="gotoArtist(artist.id)"
+        @click.native="gotoArtist(artist.slug)"
         :img="artist.photo"
         :name="artist.name"
       ></Thumb>
@@ -55,8 +56,8 @@ export default {
   },
 
   methods: {
-    gotoArtist(id) {
-      this.$router.push({ path: '/artists/' + id });
+    gotoArtist(slug) {
+      this.$router.push({ path: `/artists/${slug}` });
     }
   },
 
@@ -65,39 +66,4 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss">
-.artists {
-  &__container {
-    display: grid;
-    grid-gap: 2rem;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto 5rem auto;
-
-    /* Larger than mobile */
-    @media (min-width: 400px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    /* Larger than phablet (also point when grid becomes active) */
-    @media (min-width: 550px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    /* Larger than tablet */
-    @media (min-width: 750px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Larger than desktop */
-    @media (min-width: 1000px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Larger than Desktop HD */
-    @media (min-width: 1200px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

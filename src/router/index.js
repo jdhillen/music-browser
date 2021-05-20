@@ -26,11 +26,34 @@ const routes = [
     }
   },
   {
+    path: '/artists/:slug',
+    name: 'ArtistDetails',
+    props: true,
+    component: () => import('../views/ArtistDetails.vue'),
+    async beforeEnter(to, from, next) {
+      await store.dispatch('fetchArtist', to.params.slug).then((artist) => {
+        to.params.artist = artist;
+        next();
+      });
+    }
+  },
+  {
     path: '/albums',
     name: 'Albums',
     component: () => import('../views/Albums.vue'),
     async beforeEnter(to, from, next) {
       await store.dispatch('fetchAlbums').then(() => {
+        next();
+      });
+    }
+  },
+  {
+    path: '/albums/:slug',
+    name: 'AlbumDetails',
+    component: () => import('../views/AlbumDetails.vue'),
+    async beforeEnter(to, from, next) {
+      await store.dispatch('fetchAlbum', to.params.slug).then((album) => {
+        to.params.album = album;
         next();
       });
     }

@@ -17,15 +17,15 @@ export default {
     return apiClient.get('artists/');
   },
 
-  getArtist(id) {
-    return apiClient.get('artists/' + id + '/');
+  getArtist(slug) {
+    return apiClient.get('artists/?slug=' + slug);
   },
 
   getAlbums() {
     return apiClient.get('albums/');
   },
 
-  getAlbum(id) {
-    return apiClient.get('albums/' + id + '/');
+  getAlbum(slug) {
+    return apiClient.get('albums/?slug=' + slug);
   }
 };

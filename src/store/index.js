@@ -20,9 +20,9 @@ export default createStore({
       });
     },
 
-    fetchArtist({ commit }, id) {
-      return Service.getArtist(id).then((response) => {
-        commit('SET_ARTIST', response.data);
+    fetchArtist({ commit }, slug) {
+      return Service.getArtist(slug).then((response) => {
+        commit('SET_ARTIST', response.data[0]);
       });
     },
 
@@ -32,9 +32,9 @@ export default createStore({
       });
     },
 
-    fetchAlbum({ commit }, id) {
-      return Service.getAlbum(id).then((response) => {
-        commit('SET_ALBUM', response.data);
+    fetchAlbum({ commit }, slug) {
+      return Service.getAlbum(slug).then((response) => {
+        commit('SET_ALBUM', response.data[0]);
       });
     }
   },
