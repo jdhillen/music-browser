@@ -2,14 +2,6 @@
 
 _All notable changes to this project will be documented in this file._
 
-## v0.0.1 - 2021-05-19
-
-### Removed
-
-- Demo Service call
-
----
-
 ## v0.0.0 - 2021-05-19
 
 ### Added
