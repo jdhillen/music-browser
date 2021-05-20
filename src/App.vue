@@ -1,41 +1,24 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="app container">
-    <div class="row">
-      <div class="twelve columns">
-        <div id="nav">
-          <router-link :to="{ name: 'Home' }">Home</router-link> |
-          <router-link :to="{ name: 'About' }">About</router-link>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="twelve columns">
-        <img alt="Vue logo" src="./assets/img/logo.png" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="twelve columns">
-        <p>{{ title }}</p>
-      </div>
-    </div>
-    <router-view />
-  </section>
+  <Navigation />
+  <router-view class="container" />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script>
+import Navigation from './components/Navigation.vue';
+
 export default {
   name: 'app',
 
   props: {},
 
-  components: {},
+  components: {
+    Navigation
+  },
 
   data() {
-    return {
-      title: import.meta.env.VITE_APP_TITLE
-    };
+    return {};
   },
 
   beforeCreate() {},
@@ -63,9 +46,4 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss">
-.app {
-  text-align: center;
-  margin-top: 50px;
-}
-</style>
+<style lang="scss"></style>
