@@ -72,7 +72,7 @@ export default {
     grid-gap: 2rem;
     width: 100%;
     max-width: 100%;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 5rem auto;
 
     /* Larger than mobile */
     @media (min-width: 400px) {
@@ -98,34 +98,6 @@ export default {
     @media (min-width: 1200px) {
       grid-template-columns: repeat(4, 1fr);
     }
-  }
-
-  &__item {
-    position: relative;
-    border: 1px solid $white;
-    box-shadow: 0px 1px 5px black(0.75);
-  }
-
-  &__img {
-    width: 100%;
-  }
-
-  &__name {
-    position: absolute;
-    font-size: 20px;
-    padding: 15px 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: $white;
-    text-shadow: 0px 2px $black;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(255, 255, 255, 0) 80%
-    );
   }
 }
 </style>

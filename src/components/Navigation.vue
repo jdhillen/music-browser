@@ -2,6 +2,7 @@
 <template>
   <div class="navigation">
     <router-link :to="{ name: 'Home' }">Home</router-link>
+    <router-link :to="{ name: 'About' }">About</router-link>
     <router-link :to="{ name: 'Artists' }">Artists</router-link>
     <router-link :to="{ name: 'Albums' }">Albums</router-link>
   </div>
@@ -46,15 +47,15 @@ export default {
 <style lang="scss">
 .navigation {
   width: 100%;
-  padding: 30px;
+  padding: 2rem;
   text-align: center;
   background-color: black(0.8);
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 
   a {
     font-weight: bold;
     color: white(0.5);
-    padding: 0 25px;
+    padding: 0 2rem;
 
     &.router-link-active {
       color: $white;

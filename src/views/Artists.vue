@@ -72,7 +72,7 @@ export default {
     grid-gap: 2rem;
     width: 100%;
     max-width: 100%;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 5rem auto;
 
     /* Larger than mobile */
     @media (min-width: 400px) {
