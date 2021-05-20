@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page albums">
+  <section class="albums">
     <h1>Albums</h1>
 
     <div class="albums__container">
@@ -48,9 +48,7 @@ export default {
   unmounted() {},
 
   computed: {
-    ...mapState({
-      albums: (state) => state.api.albums
-    })
+    ...mapState(['albums'])
   },
 
   methods: {

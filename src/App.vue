@@ -1,11 +1,7 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div class="app">
-    <Navigation />
-    <div class="container">
-      <router-view />
-    </div>
-  </div>
+  <Navigation />
+  <router-view class="container" />
 </template>
 
 <!--|== Scripts ================================================================================ -->
@@ -50,7 +46,4 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss">
-.app {
-}
-</style>
+<style lang="scss"></style>

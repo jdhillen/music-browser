@@ -14,15 +14,13 @@ body {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  font-family: 'Open Sans Regular';
-  font-size: 14px;
-  font-style: normal;
   @extend .smooth;
 }
 
-a {
-  color: #42b983;
-  text-decoration: none;
+// ==|== Responsive Images =========================================================================
+img {
+  width: 100%;
+  height: auto;
 }
 
 // ==|== Disable Click Events ======================================================================

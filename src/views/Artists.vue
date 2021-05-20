@@ -1,15 +1,23 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page artists">
-    <h1>Artists</h1>
-    <div class="artists__container">
-      <Thumb
-        v-for="(artist, index) in artists"
-        :key="index"
-        @click.native="gotoArtist(artist.id)"
-        :img="artist.photo"
-        :name="artist.name"
-      ></Thumb>
+  <section class="artists">
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Artists</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <div class="artists__container">
+          <Thumb
+            v-for="(artist, index) in artists"
+            :key="index"
+            @click.native="gotoArtist(artist.id)"
+            :img="artist.photo"
+            :name="artist.name"
+          ></Thumb>
+        </div>
+      </div>
     </div>
   </section>
 </template>
