@@ -6,18 +6,14 @@
         <h1>Artists</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="twelve columns">
-        <div class="artists__container">
-          <Thumb
-            v-for="(artist, index) in artists"
-            :key="index"
-            @click.native="gotoArtist(artist.id)"
-            :img="artist.photo"
-            :name="artist.name"
-          ></Thumb>
-        </div>
-      </div>
+    <div class="artists__container">
+      <Thumb
+        v-for="(artist, index) in artists"
+        :key="index"
+        @click.native="gotoArtist(artist.id)"
+        :img="artist.photo"
+        :name="artist.name"
+      ></Thumb>
     </div>
   </section>
 </template>

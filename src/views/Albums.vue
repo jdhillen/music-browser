@@ -1,8 +1,11 @@
 <!--|== Template =============================================================================== -->
 <template>
   <section class="albums">
-    <h1>Albums</h1>
-
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Albums</h1>
+      </div>
+    </div>
     <div class="albums__container">
       <Thumb
         v-for="(album, index) in albums"
