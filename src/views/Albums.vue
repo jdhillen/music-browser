@@ -72,7 +72,8 @@ export default {
     grid-gap: 2rem;
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
+
     /* Larger than mobile */
     @media (min-width: 400px) {
       grid-template-columns: repeat(1, 1fr);

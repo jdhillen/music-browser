@@ -48,12 +48,11 @@ const router = createRouter({
 });
 
 // ==|== Route Guards ==============================================================================
-router.beforeEach((routeTo, routeFrom, next) => {
+router.beforeEach((to, from) => {
   NProgress.start();
-  next();
 });
 
-router.afterEach(() => {
+router.afterEach((to, from) => {
   NProgress.done();
 });
 
