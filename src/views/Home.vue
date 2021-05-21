@@ -9,7 +9,7 @@
           technology, I always us music as the content. This app was built with
           Vue 3, Vite and hosted on Netlify. This app will display some of my
           favorite artists and albums. Along with track listings and blurbs
-          abbout each artist.
+          about each artist.
         </p>
         <p>Enjoy,<br />J.D. Hillen</p>
       </div>
