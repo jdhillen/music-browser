@@ -1,16 +1,35 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div class="navigation">
-    <router-link :to="{ name: 'Home' }">Home</router-link>
-    <router-link :to="{ name: 'Artists' }">Artists</router-link>
-    <router-link :to="{ name: 'Albums' }">Albums</router-link>
+  <div class="row">
+    <div class="four columns">
+      <img class="img" :src="photo" :alt="name" />
+    </div>
+    <div class="eight columns">
+      <div class="description" v-html="description"></div>
+    </div>
   </div>
+  <hr />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script>
 export default {
-  name: 'navigation',
+  name: 'page-details',
+
+  props: {
+    photo: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    }
+  },
 
   components: {},
 
@@ -43,22 +62,14 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss">
-.navigation {
-  width: 100%;
-  padding: 2.75rem;
-  text-align: center;
-  background-color: black(0.8);
-  margin-bottom: 5rem;
+<style lang="scss" scopped>
+.img {
+  border: 1px solid $white;
+  box-shadow: 0px 2px 5px black(0.5);
+  margin-bottom: 2rem;
+}
 
-  a {
-    font-weight: bold;
-    color: white(0.5);
-    padding: 0 2rem;
-
-    &.router-link-active {
-      color: $white;
-    }
-  }
+.description {
+  line-height: 1.5;
 }
 </style>

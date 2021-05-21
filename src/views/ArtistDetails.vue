@@ -1,25 +1,28 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="artist">
-    <h1>About {{ artist.name }}</h1>
-    <div class="artist__container">
-      <div class="artist__img">
-        <img :src="artist.photo" :alt="artist.name" />
+  <section>
+    <PageTitle :text="artist.name" />
+    <PageDetails
+      :photo="artist.photo"
+      :name="artist.name"
+      :description="artist.bio"
+    />
+    <div class="row">
+      <div class="twelve columns">
+        <h4>Albums</h4>
       </div>
-
-      <div class="artist__bio">{{ artist.bio }}</div>
-    </div>
-
-    <h1>Albums</h1>
-    <div class="grid__container">
-      <Thumb
-        v-if="artist.albums"
-        v-for="(album, index) in artist.albums"
-        :key="index"
-        @click.native="gotoAlbum(album.slug)"
-        :img="album.photo"
-        :name="album.name"
-      ></Thumb>
+      <div class="twelve columns">
+        <div class="grid__container">
+          <Thumb
+            v-if="artist.albums"
+            v-for="(album, index) in artist.albums"
+            :key="index"
+            @click.native="gotoAlbum(album.slug)"
+            :img="album.photo"
+            :name="album.name"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -27,12 +30,16 @@
 <!--|== Scripts ================================================================================ -->
 <script>
 import { mapState } from 'vuex';
+import PageTitle from '../components/PageTitle.vue';
+import PageDetails from '../components/PageDetails.vue';
 import Thumb from '../components/Thumb.vue';
 
 export default {
   name: 'artists-details',
 
   components: {
+    PageTitle,
+    PageDetails,
     Thumb
   },
 
@@ -71,22 +78,4 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss">
-.artist {
-  &__container {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &__img {
-    flex: none;
-    display: block;
-    width: 300px;
-    height: 300px;
-    margin-right: 25px;
-    position: relative;
-    border: 1px solid $white;
-    box-shadow: 0px 2px 5px black(0.5);
-  }
-}
-</style>
+<style lang="scss"></style>

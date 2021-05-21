@@ -53,6 +53,7 @@ export default {
 .thumb {
   &__item {
     position: relative;
+    background-color: $black;
     border: 1px solid $white;
     box-shadow: 0px 2px 5px black(0.5);
     cursor: pointer;

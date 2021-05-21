@@ -1,35 +1,29 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section>
-    <PageTitle :text="title" />
-    <div class="row">
-      <div class="twelve columns">
-        <p>Looks like something went wrong that wasn't planned.</p>
-        <router-link class="button" :to="{ name: 'Home' }"
-          >Back to the home page</router-link
-        >
-      </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h3 class="title">{{ text }}</h3>
     </div>
-  </section>
+  </div>
+  <hr />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script>
-import PageTitle from '../components/PageTitle.vue';
-
 export default {
-  name: 'page-not-found-page',
+  name: 'page-title',
 
-  props: {},
-
-  components: {
-    PageTitle
+  props: {
+    text: {
+      type: String,
+      required: true
+    }
   },
 
+  components: {},
+
   data() {
-    return {
-      title: '404'
-    };
+    return {};
   },
 
   beforeCreate() {},
@@ -57,4 +51,8 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss" scoped></style>
+<style lang="scss" scopped>
+.title {
+  margin-bottom: 0;
+}
+</style>

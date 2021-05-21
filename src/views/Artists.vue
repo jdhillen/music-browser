@@ -1,11 +1,7 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="artists">
-    <div class="row">
-      <div class="twelve columns">
-        <h1>Artists</h1>
-      </div>
-    </div>
+  <section>
+    <PageTitle :text="title" />
     <div class="grid__container">
       <Thumb
         v-if="artists"
@@ -22,17 +18,21 @@
 <!--|== Scripts ================================================================================ -->
 <script>
 import { mapState } from 'vuex';
+import PageTitle from '../components/PageTitle.vue';
 import Thumb from '../components/Thumb.vue';
 
 export default {
   name: 'artists-page',
 
   components: {
+    PageTitle,
     Thumb
   },
 
   data() {
-    return {};
+    return {
+      title: 'Artists'
+    };
   },
 
   beforeCreate() {},

@@ -1,11 +1,13 @@
 <!--|== Template =============================================================================== -->
 <template>
+  <GitHubCorner />
   <Navigation />
   <router-view class="container" />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script>
+import GitHubCorner from './components/GitHubCorner.vue';
 import Navigation from './components/Navigation.vue';
 
 export default {
@@ -14,6 +16,7 @@ export default {
   props: {},
 
   components: {
+    GitHubCorner,
     Navigation
   },
 

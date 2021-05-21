@@ -1,33 +1,18 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="album">
+  <section>
+    <PageTitle :text="album.name" />
+    <PageDetails
+      :photo="album.photo"
+      :name="album.name"
+      :description="album.description"
+    />
     <div class="row">
       <div class="twelve columns">
-        <h3 class="album__title">{{ album.name }}</h3>
+        <h4>Track List</h4>
       </div>
-    </div>
-    <hr />
-    <div class="row">
-      <div class="four columns">
-        <img class="album__img" :src="album.photo" :alt="album.name" />
-      </div>
-      <div class="eight columns">
-        <div class="album__description">{{ album.description }}</div>
-      </div>
-    </div>
-    <hr />
-    <div class="row">
-      <div class="twelve columns">
-        <h3>Track List</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="twelve columns">
-        <div
-          class="album__track"
-          v-for="(track, index) in album.tracks"
-          :key="index"
-        >
+      <div class="twelve columns bottom">
+        <div v-for="(track, index) in album.tracks" :key="index">
           {{ track.track_number }} - {{ track.name }}
         </div>
       </div>
@@ -38,11 +23,16 @@
 <!--|== Scripts ================================================================================ -->
 <script>
 import { mapState } from 'vuex';
+import PageTitle from '../components/PageTitle.vue';
+import PageDetails from '../components/PageDetails.vue';
 
 export default {
   name: 'albums-details',
 
-  components: {},
+  components: {
+    PageTitle,
+    PageDetails
+  },
 
   data() {
     return {};
@@ -75,26 +65,4 @@ export default {
 </script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss">
-.album {
-  &__title {
-    margin-bottom: 0;
-  }
-
-  &__img {
-    border: 1px solid $white;
-    box-shadow: 0px 2px 5px black(0.5);
-    margin-bottom: 2rem;
-  }
-
-  &__description {
-    line-height: 1.5;
-  }
-
-  &__tracks {
-  }
-
-  &__track {
-  }
-}
-</style>
+<style lang="scss"></style>
